@@ -5,8 +5,8 @@ print(logo)
 print("Welcome to the secret auction program.")
 
 bids = {}
-loop_continue = True
-while loop_continue:
+finished = False
+while not finished:
     name = input("What is your name?: ")
     bid = int(input("What is your bid?: $"))
 
@@ -14,8 +14,8 @@ while loop_continue:
 
     should_continue = input("Are there any other bidders? Type 'yes' or 'no'.\n")
     if should_continue == 'no':
-        loop_continue = False
+        finished = True
     clear()
 
 winner = max(bids, key=bids.get)
-print("The winner is {} with a bid of {}".format(winner, bids[winner]))
+print("The winner is {} with a bid of ${}".format(winner, bids[winner]))
